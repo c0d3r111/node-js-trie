@@ -51,6 +51,9 @@ Trie.prototype.del    = function(word) {
 
   return;
 };
+Trie.prototype.size   = function() {
+  return this.data._s;
+};
 Trie.prototype.export = function() {
   return JSON.stringify(this.data);
 };
