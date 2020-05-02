@@ -3,8 +3,7 @@ function Trie() {
   this.data._s = 0;
 }
 
-Trie.prototype.add    = function(_word, value = 1) {
-  let word = _word.slice().toLowerCase().replace(/[^a-z]/g, '');
+Trie.prototype.add    = function(word) {
   let last = this.data;
 
   for (let i = 0; i < word.length; i++) {
@@ -15,14 +14,13 @@ Trie.prototype.add    = function(_word, value = 1) {
   }
 
   if (!last._) {
-    last._ = value;
+    last._        = null;
     this.data._s += 1;
   }
 
   return;
 };
-Trie.prototype.has    = function(_word) {
-  let word = _word.slice().toLowerCase().replace(/[^a-z]/g, '');
+Trie.prototype.has    = function(word) {
   let last = this.data;
 
   for (let i = 0; i < word.length; i++) {
@@ -33,10 +31,9 @@ Trie.prototype.has    = function(_word) {
     last = last[char];    
   }
 
-  return last._ ? true : false;
+  return "_" in last;
 };
-Trie.prototype.del    = function(_word) {
-  let word = _word.slice().toLowerCase().replace(/[^a-z]/g, '');
+Trie.prototype.del    = function(word) {
   let last = this.data;
 
   for (let i = 0; i < word.length; i++) {
