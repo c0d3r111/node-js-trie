@@ -13,7 +13,8 @@ for (let word of words) {
   void trie.add(word);
 }
 
-void console.log(trie.has("apples");
-void console.log(trie.has("apple");
+void console.log(trie.has("apples"); // true
+void console.log(trie.has("apple");  // false
+void console.log(tries.size());      // 4
 
 ```
