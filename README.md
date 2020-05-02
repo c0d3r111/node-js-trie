@@ -15,6 +15,6 @@ for (let word of words) {
 
 void console.log(trie.has("apples"); // true
 void console.log(trie.has("apple");  // false
-void console.log(tries.size());      // 4
+void console.log(trie.size());      // 4
 
 ```
